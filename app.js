@@ -1,11 +1,12 @@
 const express = require("express");
 const employeeRouter = require("./router/employeeRoutes");
+const serverless = require("serverless-http");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const app = express();
 app.use(express.json());
 
-app.use("/employee", employeeRouter);
+app.use("/employer", employeeRouter);
 
 mongoose
   .connect(process.env.MONGO_URI)
@@ -20,3 +21,5 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+
+// module.exports.handler = serverless(app);

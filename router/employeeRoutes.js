@@ -13,7 +13,6 @@ const router = express.Router();
 router.post("/worker", loginUser);
 router.post("/employer", admin);
 
-router.use(verifyAuth);
 router.get("/", getAllEmployee);
 router.post("/addUser", addUser);
 router.patch("/:_id", editUser);
